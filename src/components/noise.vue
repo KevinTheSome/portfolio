@@ -98,5 +98,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas ref="canvas" class="min-h-screen min-w-screen fixed z-[0] bg-fixed top-0 left-0"></canvas>
+  <canvas ref="canvas" class="min-h-screen w-[80vw]"></canvas>
 </template>
