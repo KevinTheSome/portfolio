@@ -1,11 +1,11 @@
 <script setup>
 import noise from "./components/noise.vue";
 import navbar from "./components/Nav.vue";
-import { Analytics } from '@vercel/analytics/vue';
+// import { Analytics } from '@vercel/analytics/vue';
 </script>
 
 <template>
-  <Analytics />
+  <!-- <Analytics /> -->
 
   <navbar />
 
