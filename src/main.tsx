@@ -1,5 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import "./assets/index.css";
 
 import Home from "./pages/Home";
@@ -9,11 +11,13 @@ import Contact from "./pages/Contact";
 
 createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
+        <NavBar />
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
     </BrowserRouter>,
 );
