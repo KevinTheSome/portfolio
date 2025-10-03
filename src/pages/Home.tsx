@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import styles from "./Home.module.css";
 
 const Home: React.FC = () => {
     const itemVariants = {
@@ -7,8 +8,26 @@ const Home: React.FC = () => {
         visible: { opacity: 1, y: 0 },
     };
 
+    const pageVariants = {
+        initial: {
+            opacity: 0,
+            x: "-100vw",
+            y: 0,
+            transition: { duration: 1.4 },
+        },
+        animate: { opacity: 1, x: 0, transition: { duration: 1.4 } },
+        exit: { opacity: 0, x: "100vw", y: 0, transition: { duration: 1.4 } },
+    };
+
     return (
-        <section id="home" className="hero">
+        <motion.section
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            id="home"
+            className={styles.hero}
+        >
             <motion.div
                 variants={itemVariants}
                 initial="hidden"
@@ -23,7 +42,7 @@ const Home: React.FC = () => {
                     experiences.
                 </motion.p>
             </motion.div>
-        </section>
+        </motion.section>
     );
 };
 

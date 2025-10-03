@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import styles from "./Projects.module.css";
 
 const Projects: React.FC = () => {
     const containerVariants = {
@@ -17,8 +18,25 @@ const Projects: React.FC = () => {
         visible: { opacity: 1, y: 0 },
     };
 
+    const pageVariants = {
+        initial: {
+            opacity: 0,
+            x: "-100vw",
+            y: 0,
+            transition: { duration: 1.4 },
+        },
+        animate: { opacity: 1, x: 0, transition: { duration: 1.4 } },
+        exit: { opacity: 0, x: "100vw", y: 0, transition: { duration: 1.4 } },
+    };
+
     return (
-        <section className="projects">
+        <motion.section
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className={styles.projects}
+        >
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -27,9 +45,9 @@ const Projects: React.FC = () => {
                 className="section-content"
             >
                 <motion.h2 variants={itemVariants}>Projects</motion.h2>
-                <div className="project-grid">
+                <div className={styles["project-grid"]}>
                     <motion.div
-                        className="project-card"
+                        className={styles["project-card"]}
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                     >
@@ -43,7 +61,7 @@ const Projects: React.FC = () => {
                         </a>
                     </motion.div>
                     <motion.div
-                        className="project-card"
+                        className={styles["project-card"]}
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                     >
@@ -57,7 +75,7 @@ const Projects: React.FC = () => {
                         </a>
                     </motion.div>
                     <motion.div
-                        className="project-card"
+                        className={styles["project-card"]}
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                     >
@@ -72,7 +90,7 @@ const Projects: React.FC = () => {
                     </motion.div>
                 </div>
             </motion.div>
-        </section>
+        </motion.section>
     );
 };
 
