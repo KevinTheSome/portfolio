@@ -36,17 +36,10 @@ const NavBar: React.FC = () => {
     };
 
     return (
-        <nav className={styles.navbar}>
+        <nav
+            className={`${styles.navbar} ${theme === "dark" ? styles["navbar--dark"] : ""}`}
+        >
             <div className={styles["nav-container"]}>
-                <div className={styles["nav-logo"]}>
-                    <NavLink
-                        to="/"
-                        className={styles["nav-link"]}
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Kevin's Portfolio
-                    </NavLink>
-                </div>
                 <ul
                     className={`${styles["nav-links"]} ${isOpen ? styles["nav-links--active"] : ""}`}
                 >
