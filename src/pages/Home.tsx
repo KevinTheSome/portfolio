@@ -11,12 +11,35 @@ const Home: React.FC = () => {
     const pageVariants = {
         initial: {
             opacity: 0,
-            x: "-100vw",
-            y: 0,
-            transition: { duration: 1.4 },
+            scale: 0.8,
+            rotateY: -15,
+            x: -100,
         },
-        animate: { opacity: 1, x: 0, transition: { duration: 1.4 } },
-        exit: { opacity: 0, x: "100vw", y: 0, transition: { duration: 1.4 } },
+        animate: {
+            opacity: 1,
+            scale: 1,
+            rotateY: 0,
+            x: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeInOut" as const,
+                scale: {
+                    type: "spring",
+                    damping: 20,
+                    stiffness: 100,
+                },
+            },
+        },
+        exit: {
+            opacity: 0,
+            scale: 0.8,
+            rotateY: 15,
+            x: 100,
+            transition: {
+                duration: 0.4,
+                ease: "easeInOut" as const,
+            },
+        },
     };
 
     return (

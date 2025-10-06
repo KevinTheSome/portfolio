@@ -21,12 +21,35 @@ const About: React.FC = () => {
     const pageVariants = {
         initial: {
             opacity: 0,
-            x: "-100vw",
-            y: 0,
-            transition: { duration: 1.4 },
+            scale: 1.1,
+            y: -50,
+            filter: "blur(10px)",
         },
-        animate: { opacity: 1, x: 0, transition: { duration: 1.4 } },
-        exit: { opacity: 0, x: "100vw", y: 0, transition: { duration: 1.4 } },
+        animate: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            filter: "blur(0px)",
+            transition: {
+                duration: 0.5,
+                ease: "easeOut" as const,
+                scale: {
+                    type: "spring",
+                    damping: 15,
+                    stiffness: 120,
+                },
+            },
+        },
+        exit: {
+            opacity: 0,
+            scale: 0.9,
+            y: 50,
+            filter: "blur(10px)",
+            transition: {
+                duration: 0.3,
+                ease: "easeIn" as const,
+            },
+        },
     };
 
     return (

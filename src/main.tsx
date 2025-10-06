@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import { AnimatePresence } from "framer-motion";
-import { ThemeProvider } from "./context/ThemeContext";
 
 const App = () => {
     const location = useLocation();
@@ -24,9 +23,7 @@ const App = () => {
 
 createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
-        <ThemeProvider>
-            <NavBar />
-            <App />
-        </ThemeProvider>
+        <NavBar />
+        <App />
     </BrowserRouter>,
 );

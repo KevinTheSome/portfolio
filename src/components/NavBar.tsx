@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useTheme } from "../context/ThemeContext";
+
 import styles from "./NavBar.module.css";
 
 const NavBar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-    const { theme, toggleTheme } = useTheme();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -36,9 +34,7 @@ const NavBar: React.FC = () => {
     };
 
     return (
-        <nav
-            className={`${styles.navbar} ${theme === "dark" ? styles["navbar--dark"] : ""}`}
-        >
+        <nav className={`${styles.navbar} ${styles["navbar--dark"]}`}>
             <div className={styles["nav-container"]}>
                 <ul
                     className={`${styles["nav-links"]} ${isOpen ? styles["nav-links--active"] : ""}`}
@@ -92,21 +88,7 @@ const NavBar: React.FC = () => {
                         </NavLink>
                     </motion.li>
                 </ul>
-                <div className={styles["theme-toggle"]} onClick={toggleTheme}>
-                    <motion.span
-                        animate={{ rotate: theme === "dark" ? 0 : 180 }}
-                        transition={{ duration: 0.3 }}
-                        style={{ cursor: "pointer", fontSize: "1.5rem" }}
-                        role="img"
-                        aria-label={
-                            theme === "dark"
-                                ? "Switch to light theme"
-                                : "Switch to dark theme"
-                        }
-                    >
-                        {theme === "dark" ? "☀️" : "🌙"}
-                    </motion.span>
-                </div>
+
                 <div className={styles.hamburger} onClick={toggleMenu}>
                     <motion.span
                         variants={topLineVariants}

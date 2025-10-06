@@ -1,0 +1,156 @@
+.projectCard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modalContent {
+    background: white;
+    border: 3px solid #000;
+    padding: 0;
+    max-width: 1200px;
+    max-height: 90vh;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: auto;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    border: 2px solid #000;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #000;
+    padding: 0;
+    line-height: 1;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.closeButton:hover {
+    background: #000;
+    color: white;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: none;
+}
+
+.leftSection {
+    padding: 3rem 2rem 2rem 2rem;
+    border-right: 3px solid #000;
+}
+
+.projectTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    color: #1f2937;
+}
+
+.rightSection {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techTag {
+    background: #e5e7eb;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #1f2937;
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+}
+
+.imageContainer {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.projectImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .projectCard {
+        padding: 1rem;
+    }
+    
+    .modalContent {
+        max-height: 95vh;
+    }
+    
+    .content {
+        grid-template-columns: 1fr;
+    }
+    
+    .leftSection {
+        border-right: none;
+        border-bottom: 3px solid #000;
+    }
+    
+    .projectTitle {
+        font-size: 1.5rem;
+    }
+    
+    .imageContainer {
+        max-width: 100%;
+    }
+}
