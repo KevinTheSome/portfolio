@@ -17,24 +17,6 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onClose }: ProjectCardProps) {
-    const getIcon = (iconName: string) => {
-        const iconSvg = iconMap[iconName];
-        if (!iconSvg) {
-            console.warn(`Icon not found for: ${iconName}`);
-            return null;
-        }
-        return (
-            <svg
-                className="ionicon"
-                viewBox="0 0 512 512"
-                width="16"
-                height="16"
-                style={{ marginRight: "4px", verticalAlign: "middle" }}
-                dangerouslySetInnerHTML={{ __html: iconSvg }}
-            />
-        );
-    };
-
     const videoId = project.video ? project.video.split("/").pop() || "" : "";
 
     return (
