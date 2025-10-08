@@ -6,7 +6,9 @@ interface Project {
     title: string;
     description: string;
     technologies: string[];
+    technologiesIcons: string[];
     image: string;
+    video: string;
 }
 
 interface ProjectCardProps {
@@ -15,6 +17,26 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onClose }: ProjectCardProps) {
+    const getIcon = (iconName: string) => {
+        const iconSvg = iconMap[iconName];
+        if (!iconSvg) {
+            console.warn(`Icon not found for: ${iconName}`);
+            return null;
+        }
+        return (
+            <svg
+                className="ionicon"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+                style={{ marginRight: "4px", verticalAlign: "middle" }}
+                dangerouslySetInnerHTML={{ __html: iconSvg }}
+            />
+        );
+    };
+
+    const videoId = project.video ? project.video.split("/").pop() || "" : "";
+
     return (
         <motion.div
             className={styles.projectCard}
@@ -39,14 +61,23 @@ export function ProjectCard({ project, onClose }: ProjectCardProps) {
                     <div className={styles.leftSection}>
                         <h3 className={styles.projectTitle}>{project.title}</h3>
                         <div className={styles.section}>
-                            <h4 className={styles.sectionTitle}>Project Description</h4>
-                            <p className={styles.description}>{project.description}</p>
+                            <h4 className={styles.sectionTitle}>
+                                Project Description
+                            </h4>
+                            <p className={styles.description}>
+                                {project.description}
+                            </p>
                         </div>
                         <div className={styles.section}>
-                            <h4 className={styles.sectionTitle}>Project Technologies</h4>
+                            <h4 className={styles.sectionTitle}>
+                                Project Technologies
+                            </h4>
                             <div className={styles.technologies}>
                                 {project.technologies.map((tech, index) => (
-                                    <span key={index} className={styles.techTag}>
+                                    <span
+                                        key={index}
+                                        className={styles.techTag}
+                                    >
                                         {tech}
                                     </span>
                                 ))}
@@ -55,9 +86,12 @@ export function ProjectCard({ project, onClose }: ProjectCardProps) {
                     </div>
                     <div className={styles.rightSection}>
                         <div className={styles.imageContainer}>
-                            <img
-                                src={project.image}
-                                alt={project.title}
+                            <iframe
+                                src={`https://www.youtube.com/embed/${videoId}`}
+                                title={`Demo of ${project.title}`}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                style={{ width: "100%", aspectRatio: "16 / 9" }}
                                 className={styles.projectImage}
                             />
                         </div>

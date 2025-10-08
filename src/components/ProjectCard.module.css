@@ -13,13 +13,13 @@
 }
 
 .modalContent {
-    background: white;
-    border: 3px solid #000;
+    background: #1a1a1a;
+    border: 3px solid #333333;
     padding: 0;
     max-width: 1200px;
     max-height: 90vh;
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     overflow: auto;
     position: relative;
 }
@@ -28,8 +28,8 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: white;
-    border: 2px solid #000;
+    background: #2d3748;
+    border: 2px solid #4a5568;
     font-size: 2rem;
     width: 50px;
     height: 50px;
@@ -38,7 +38,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
-    color: #000;
+    color: #ffffff;
     padding: 0;
     line-height: 1;
     z-index: 10;
@@ -46,7 +46,7 @@
 }
 
 .closeButton:hover {
-    background: #000;
+    background: #4a5568;
     color: white;
 }
 
@@ -58,14 +58,14 @@
 
 .leftSection {
     padding: 3rem 2rem 2rem 2rem;
-    border-right: 3px solid #000;
+    border-right: 3px solid #333333;
 }
 
 .projectTitle {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0 0 2rem 0;
-    color: #1f2937;
+    color: #ffffff;
 }
 
 .rightSection {
@@ -87,13 +87,13 @@
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #374151;
+    color: #e2e8f0;
 }
 
 .description {
     font-size: 1rem;
     line-height: 1.6;
-    color: #4b5563;
+    color: #cbd5e0;
     margin: 0;
 }
 
@@ -104,21 +104,28 @@
 }
 
 .techTag {
-    background: #e5e7eb;
+    background: #4a5568;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-size: 0.9rem;
-    color: #1f2937;
+    color: #ffffff;
     font-weight: 500;
-    border: 1px solid #d1d5db;
+    border: 1px solid #718096;
+}
+
+.techIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.25rem;
+    vertical-align: middle;
 }
 
 .imageContainer {
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 4/3;
+    aspect-ratio: 9/16;
     overflow: hidden;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #4a5568;
     border-radius: 8px;
 }
 
@@ -126,30 +133,31 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 @media (max-width: 768px) {
     .projectCard {
         padding: 1rem;
     }
-    
+
     .modalContent {
         max-height: 95vh;
     }
-    
+
     .content {
         grid-template-columns: 1fr;
     }
-    
+
     .leftSection {
         border-right: none;
-        border-bottom: 3px solid #000;
+        border-bottom: 3px solid #333333;
     }
-    
+
     .projectTitle {
         font-size: 1.5rem;
     }
-    
+
     .imageContainer {
         max-width: 100%;
     }
