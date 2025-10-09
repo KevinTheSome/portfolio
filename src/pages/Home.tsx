@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, easeOut, easeInOut } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +32,7 @@ const Home = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, ease: "easeOut" },
+            transition: { duration: 0.6, ease: easeOut },
         },
     };
 
@@ -41,7 +41,7 @@ const Home = () => {
         visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: 0.8, ease: "easeOut" },
+            transition: { duration: 0.8, ease: easeOut },
         },
     };
 
@@ -53,7 +53,7 @@ const Home = () => {
             transition: {
                 duration: 0.5,
                 delay: 0.5 + i * 0.08,
-                ease: "easeOut",
+                ease: easeOut,
             },
         }),
     };
@@ -64,7 +64,7 @@ const Home = () => {
             transition: {
                 duration: 2,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: easeInOut,
             },
         },
     };

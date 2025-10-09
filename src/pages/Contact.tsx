@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, easeIn, easeOut } from "framer-motion";
 import styles from "./Contact.module.css";
 
 const Contact: React.FC = () => {
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
             y: 0,
             transition: {
                 duration: 0.6,
-                ease: "easeOut",
+                ease: easeOut,
             },
         },
     };
@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
             filter: "blur(0px)",
             transition: {
                 duration: 0.5,
-                ease: "easeOut",
+                ease: easeOut,
             },
         },
         exit: {
@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
             filter: "blur(10px)",
             transition: {
                 duration: 0.3,
-                ease: "easeIn",
+                ease: easeIn,
             },
         },
     };
