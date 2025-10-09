@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import styles from "./Home.module.css";
@@ -48,7 +47,7 @@ const Home = () => {
 
     const skillVariants = {
         hidden: { opacity: 0, x: -20 },
-        visible: (i) => ({
+        visible: (i: number) => ({
             opacity: 1,
             x: 0,
             transition: {
