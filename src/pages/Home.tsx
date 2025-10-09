@@ -2,8 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import styles from "./Home.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
     const skills = [
         "JavaScript",
         "React",
@@ -126,6 +128,7 @@ const Home = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className={styles.buttonPrimary}
+                        onClick={() => navigate("/projects")}
                     >
                         View My Work
                     </motion.button>
@@ -133,6 +136,7 @@ const Home = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className={styles.buttonSecondary}
+                        onClick={() => navigate("/contact")}
                     >
                         Get In Touch
                     </motion.button>

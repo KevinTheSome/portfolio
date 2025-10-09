@@ -12,6 +12,7 @@ interface Project {
     description: string;
     technologies: string[];
     technologiesIcons: string[];
+    githubLink: string;
     image: string;
     video: string;
 }
@@ -30,6 +31,7 @@ const Projects: React.FC = () => {
             technologies: ["TypeScript", "React", "Laravel", "PHP", "SQLite"],
             technologiesIcons: ["TypeScript", "React Native", "Laravel"],
             image: TurniketsImage,
+            githubLink: "https://github.com/raivokinne/turnikets",
             video: "https://youtu.be/V8jPUXVNPN8",
         },
         {
@@ -39,6 +41,7 @@ const Projects: React.FC = () => {
             technologies: ["TypeScript", "React Native", "Laravel", "SQLite"],
             technologiesIcons: ["TypeScript", "React Native", "Laravel"],
             image: WhatGameImage,
+            githubLink: "https://github.com/KevinTheSome/WhatGame",
             video: "https://youtu.be/bDG5rLqGdhY",
         },
         {
@@ -48,6 +51,7 @@ const Projects: React.FC = () => {
             technologies: ["JavaScript", "React", "Laravel", "TailwindCSS"],
             technologiesIcons: ["JavaScript", "React Native", "Laravel"],
             image: GroundBnBImage,
+            githubLink: "https://github.com/KevinTheSome/GroundBnB",
             video: "https://youtu.be/iY3EtIUohqY",
         },
     ];

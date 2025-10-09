@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Github, X } from "lucide-react";
 import styles from "./ProjectCard.module.css";
 
 interface Project {
@@ -9,6 +10,7 @@ interface Project {
     technologiesIcons: string[];
     image: string;
     video: string;
+    githubLink?: string;
 }
 
 interface ProjectCardProps {
@@ -37,11 +39,12 @@ export function ProjectCard({ project, onClose }: ProjectCardProps) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <button className={styles.closeButton} onClick={onClose}>
-                    ×
+                    <X size={24} />
                 </button>
                 <div className={styles.content}>
                     <div className={styles.leftSection}>
                         <h3 className={styles.projectTitle}>{project.title}</h3>
+
                         <div className={styles.section}>
                             <h4 className={styles.sectionTitle}>
                                 Project Description
@@ -50,9 +53,10 @@ export function ProjectCard({ project, onClose }: ProjectCardProps) {
                                 {project.description}
                             </p>
                         </div>
+
                         <div className={styles.section}>
                             <h4 className={styles.sectionTitle}>
-                                Project Technologies
+                                Technologies
                             </h4>
                             <div className={styles.technologies}>
                                 {project.technologies.map((tech, index) => (
@@ -65,7 +69,22 @@ export function ProjectCard({ project, onClose }: ProjectCardProps) {
                                 ))}
                             </div>
                         </div>
+
+                        <div className={styles.buttonContainer}>
+                            {project.githubLink && (
+                                <a
+                                    href={project.githubLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.githubButton}
+                                >
+                                    <Github size={18} />
+                                    View on GitHub
+                                </a>
+                            )}
+                        </div>
                     </div>
+
                     <div className={styles.rightSection}>
                         <div className={styles.imageContainer}>
                             <iframe
