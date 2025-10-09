@@ -1,10 +1,7 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./Contact.module.css";
 
 const Contact: React.FC = () => {
-    const [submitted, setSubmitted] = useState(false);
-
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -161,7 +158,7 @@ const Contact: React.FC = () => {
                                 type="submit"
                                 className={styles.buttonPrimary}
                             >
-                                {submitted ? "✓ Message Sent!" : "Send Message"}
+                                Send Message
                             </motion.button>
                         </motion.form>
 
