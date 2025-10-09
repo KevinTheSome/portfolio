@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import styles from "./About.module.css";
+import styles from "./Contact.module.css";
 
 const About: React.FC = () => {
     const containerVariants = {

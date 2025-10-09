@@ -1,3 +1,142 @@
-.hero {
-    padding: 5rem 2rem;
+.container {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.heroSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+}
+
+.positionContainer {
+    margin-bottom: 3rem;
+}
+
+.position {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: #94a3b8;
+    margin: 0;
+    font-weight: 500;
+}
+
+.divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.description {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+}
+
+.skillBadge {
+    padding: 0.5rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: #e5e5e5;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.skillBadge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.buttonPrimary {
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 100%);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.buttonPrimary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.buttonSecondary {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    color: #e5e5e5;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttonSecondary:hover {
+    border-color: #e5e5e5;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.scrollIndicator {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    color: #64748b;
+}
+
+@media (max-width: 640px) {
+    .buttonContainer {
+        gap: 0.75rem;
+    }
+
+    .skillsContainer {
+        gap: 0.5rem;
+    }
+
+    .skillBadge {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
 }

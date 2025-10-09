@@ -62,13 +62,13 @@ const NavBar: React.FC = () => {
                         className={styles["nav-item"]}
                     >
                         <NavLink
-                            to="/about"
+                            to="/contact"
                             className={({ isActive }) =>
                                 `${styles["nav-link"]} ${isActive ? styles["nav-link--active"] : ""}`
                             }
                             onClick={() => setIsOpen(false)}
                         >
-                            About
+                            Contact
                         </NavLink>
                     </motion.li>
                     <motion.li
